@@ -5,25 +5,19 @@ describe('Address',()=>{
   it('addAddress', async ()=>{
     //   ingresa  a la pagina
     await browser.url(`http://www.automationpractice.pl/index.php`)
-
     // Click en el login
     await $('.login').click()
     await browser.pause(2000);
-
     // Envio los datos para logear
     await $('#email').setValue('kevinmorales@yopmail.com')
     await $('#passwd').setValue('Morales0829')
     await browser.pause(3000);
-    
     await $('#SubmitLogin').click()
-
     // Valido que estoy dentro de la plataforma
     await expect($('icon-home')).toBeExisting ;                   
     await expect($('h1.page-heading')).toHaveTextContaining('MY ACCOUNT')
-    
     //Verifico si el Elemento Existe.
     const addAddressElement = await $(`//*[@title="${addressTitle}"]`);
-    
     if (await addAddressElement.isExisting()) {
       await addAddressElement.click();
       //await $('[title="Add my first address"]').click();
@@ -51,12 +45,10 @@ describe('Address',()=>{
         await browser.pause(3000);
         const randomAlias = 'RandomHome' + Math.floor(Math.random() * 1000);
         await $('input[name=alias]').setValue(randomAlias)
-    
         //Envio formulario
         await $('button[name=submitAddress]').click()
     } 
     else {
-
       await $('[title="Addresses"]').click();
       await browser.pause(10000);
     }
