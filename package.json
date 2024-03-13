@@ -1,0 +1,21 @@
+{
+  "name": "Test2",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^8.32.4",
+    "@wdio/cli": "^8.33.1",
+    "@wdio/local-runner": "^8.33.1",
+    "@wdio/mocha-framework": "^8.33.1",
+    "@wdio/spec-reporter": "^8.32.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  },
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.ts"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.27.0",
+    "faker": "^6.6.6",
+    "fast-csv": "^5.0.1"
+  }
+}
