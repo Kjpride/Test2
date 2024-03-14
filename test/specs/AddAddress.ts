@@ -20,7 +20,6 @@ describe('Address',()=>{
     const addAddressElement = await $(`//*[@title="${addressTitle}"]`);
     if (await addAddressElement.isExisting()) {
       await addAddressElement.click();
-      //await $('[title="Add my first address"]').click();
       await expect($('h1.page-subheading')).toHaveTextContaining('YOUR ADDRESSES')
 
         //LLENO EL FORMULARIO
